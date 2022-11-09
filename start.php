@@ -11,7 +11,7 @@
     $app = new Controller();
     //Defino variable de petición en la url
 
-    //Recoger el método que le pasa como parámetro
+    //1. Recoger el método que le pasa como parámetro
     if(isset($_GET["method"])){
         $method = $_GET["method"];//show, find
 
@@ -20,7 +20,7 @@
         $method = "home";
     }
 
-    //Varificar que el método existe
+    //2. Verificar que el método existe
     if(method_exists($app, $method)){
         $app->$method();
     //Si no existe devuelve un código de error

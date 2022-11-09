@@ -17,7 +17,11 @@
                 <strong>Nombre: </strong>
                 <?php echo $product[1]?>
             </li>
-            
+            <li>
+                <strong>Precio: </strong>
+                <?php echo $product[2] . "€"?>
+            </li>
+            <a href="?method=home">Ir al inventario</a>            
         </ul>            
     </table>
 </body>

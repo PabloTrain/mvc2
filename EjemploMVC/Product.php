@@ -3,10 +3,13 @@
 class Product{
     //Definimos una constante
     const PRODUCTS = [
-        array(1, "Cortacesped"),
-        array(2, "Pizarra"),
-        array(3, "Billar"),
-        array(4, "Dardos")
+        array(1, "Cortacesped", 89),
+        array(2, "Pizarra",  55),
+        array(3, "Billar", 222),
+        array(4, "Dardos", 60),
+        array(5, "Ordenador", 1500),
+        array(6, "Mesa", 200),
+        array(7, "Proyector", 2000)
     ];
 
     //Constructor
