@@ -21,7 +21,7 @@
                 <strong>Precio: </strong>
                 <?php echo $product[2] . "€"?>
             </li>
-            <a href="?method=home">Ir al inventario</a>            
+            <a href="../index">Ir al inventario</a>            
         </ul>            
     </table>
 </body>
