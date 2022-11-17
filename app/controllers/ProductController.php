@@ -1,4 +1,5 @@
 <?php
+    namespace App\Controllers;
 
     require "../Product.php";
 
@@ -12,15 +13,15 @@ class ProductController{
     //Constructor 
     function index(){
         //echo "<br>Dentro del index de clase ProductController";
-        $products = Product::all();
-        require "../views/home.php";
+        $products = \Product::all();
+        require "../views/homeProduct.php";
     }
 
     //Método show
     function show(){
         //echo "<br>Dentro del show de clase ProductController";
         $id = $_GET["id"];
-        $product = Product::find($id);
+        $product = \Product::find($id);
         require "../views/show.php";
     }
 

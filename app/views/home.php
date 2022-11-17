@@ -18,15 +18,12 @@
 
   <body>
 
-    <?php require "../app/views/header.php" ?>
+    <?php require "header.php" ?>
 
-    <!-- Begin page content -->
-    <main role="main" class="container">
-      <h1 class="mt-5">Menu principal</h1>
-      <p class="lead">Este es el menu principal de la aplicación.</p>
-    </main>
     
-    <?php require "../app/views/footer.php" ?>
+    <h1>CONTENIDO</h1>
+    
+    <?php require "footer.php" ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

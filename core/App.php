@@ -6,6 +6,7 @@
 
     recurso/accion/parametro
 */
+    namespace Core;
 
 class App{
 

@@ -18,7 +18,7 @@
 
     <body>
 
-        <?php require "../app/views/header.php" ?>
+        <?php require "header.php" ?>
         
         <main role="main" class="container">
         
@@ -37,7 +37,7 @@
 
         </main>
     
-        <?php require "../app/views/footer.php" ?>
+        <?php require "footer.php" ?>
 
     </body>
 </html>
