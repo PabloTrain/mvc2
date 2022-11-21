@@ -14,7 +14,7 @@ class ProductController{
     function index(){
         //echo "<br>Dentro del index de clase ProductController";
         $products = \Product::all();
-        require "../views/homeProduct.php";
+        require "../app/views/homeProduct.php";
     }
 
     //Método show

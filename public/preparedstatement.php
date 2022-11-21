@@ -12,6 +12,7 @@
 
     try{
         $db = new PDO($dsn, $usuario, $password);
+        //Establece el nivel de error que muestra la conexión
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //Preparamos la consulta por nombre
@@ -21,8 +22,8 @@
         $sentencia = $db->prepare("INSERT INTO credenciales (nombreusu, password) VALUES (:nombre, :clave)");
         
         
-        $nombre = "Pedro";
-        $clave = "555";
+        $nombre = "Carlos";
+        $clave = "111";
 
         //Vincular datos con bindParam, se puede sobreescribir
         //$sentencia->bindParam(":nombre",$nombre);

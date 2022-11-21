@@ -28,4 +28,8 @@ class Product{
         return Product::PRODUCTS[$id-1];
     }
 
+    public function insert(){
+        
+    }
+
 }//Fin clase

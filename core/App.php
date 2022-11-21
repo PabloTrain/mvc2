@@ -6,7 +6,7 @@
 
     recurso/accion/parametro
 */
-    namespace Core;
+namespace Core;
 
 class App{
 
@@ -23,7 +23,7 @@ class App{
         $arguments = explode("/", trim($url, "/"));//trim elimina / al inicio y final
         $controllerName = array_shift($arguments); //product : ProductController
         $controllerName = ucwords($controllerName) . "Controller";
-
+        
         if(count($arguments)){
             $method = array_shift($arguments);//show
         }else{
@@ -42,6 +42,8 @@ class App{
             die("No encontrado");
         }
 
+        $controllerName = "\\App\\Controllers\\$controllerName";
+        
         //¿EXISTE EL MÉTODO EN EL CONTROLADOR?
         $controllerObject = new $controllerName; //Objeto de la clase
         if(method_exists($controllerObject, $method)){
