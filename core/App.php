@@ -1,4 +1,6 @@
 <?php
+namespace Core;
+
 /*
     - SI url no especifica ningún controlador (recurso) => asignado
     uno por defecto => home
@@ -6,7 +8,6 @@
 
     recurso/accion/parametro
 */
-namespace Core;
 
 class App{
 
