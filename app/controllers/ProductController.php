@@ -1,7 +1,8 @@
 <?php
-    namespace App\Controllers;
+namespace App\Controllers;
 
-    require "../Product.php";
+    //require "../Product.php";
+use App\Models\Product;
 
 class ProductController{
     
@@ -13,7 +14,7 @@ class ProductController{
     //Constructor 
     function index(){
         //echo "<br>Dentro del index de clase ProductController";
-        $products = \Product::all();
+        $products = Product::all();
         require "../app/views/homeProduct.php";
     }
 
@@ -21,7 +22,7 @@ class ProductController{
     function show(){
         //echo "<br>Dentro del show de clase ProductController";
         $id = $_GET["id"];
-        $product = \Product::find($id);
+        $product = Product::find($id);
         require "../views/show.php";
     }
 

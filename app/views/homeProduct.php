@@ -31,7 +31,7 @@
             <td><?php echo $item[0]?></td>
             <td><?php echo $item[1]?></td>
             <td>
-                <a href="show/?id= <?php echo $item[0] ?>">Ver detallles</a>
+                <a href="show/?id=<?php echo $item[0] ?>">Ver detallles</a>
             </td>
         </tr>
         <?php endforeach;?>
