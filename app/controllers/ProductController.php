@@ -3,6 +3,7 @@ namespace App\Controllers;
 
     //require "../Product.php";
 use App\Models\Product;
+use Dompdf\Dompdf;
 
 class ProductController{
     
@@ -25,5 +26,15 @@ class ProductController{
         $product = Product::find($id);
         require "../views/show.php";
     }
+
+   function pdf(){
+    
+    $dompdf = new Dompdf();
+    $dompdf->loadHtml('<h1>Hola mundo</h1><br>');
+    $dompdf->render();
+    header("Content-type: application/pdf");
+    header("Content-Disposition: inline; filename=documento.pdf");
+    echo $dompdf->output();
+   } 
 
 }//Fin clase
