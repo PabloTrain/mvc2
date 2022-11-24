@@ -18,24 +18,10 @@
 
   <body>
 
-    <?php require "header.php" ?>
-    <h1>Inventario de productos</h1>
-    <table border="2">
-        <tr>
-            <td>Identificador</td>
-            <td>Nombre</td>
-            <td>Enlace</td>
-        </tr>
-        <?php foreach ($products as $item): ?>
-        <tr>
-            <td><?php echo $item[0]?></td>
-            <td><?php echo $item[1]?></td>
-            <td>
-                <a href="show/?id=<?php echo $item[0] ?>">Ver detallles</a>
-            </td>
-        </tr>
-        <?php endforeach;?>
-    </table>
+  <h1>Lista de productos</h1>
+
+    
+    <h2>Contenido</h2>
 
 <?php require "footer.php" ?>
 
