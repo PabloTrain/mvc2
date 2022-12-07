@@ -23,6 +23,8 @@
     
     <h1>CONTENIDO</h1>
     
+    <a href="/home/cerrarsesion">Cerrar sesion</a>
+
     <?php require "footer.php" ?>
 
     <!-- Bootstrap core JavaScript

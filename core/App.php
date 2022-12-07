@@ -17,7 +17,7 @@ class App{
             $url = $_GET["url"];
 
         }else{
-            $url = "home";
+            $url = "login";
         }
 
         //Le va a llegar /product/show/5 -> product=recurso ; show=accion ; 5=parametro

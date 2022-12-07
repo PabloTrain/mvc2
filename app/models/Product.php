@@ -1,37 +1,60 @@
 <?php
 namespace App\Models;
 
-//Fichero que simula el modelo con datos
-class Product{
-    //Definimos una constante
-    const PRODUCTS = [
-        array(1, "Cortacesped", 89),
-        array(2, "Pizarra",  55),
-        array(3, "Billar", 222),
-        array(4, "Dardos", 60),
-        array(5, "Ordenador", 1500),
-        array(6, "Mesa", 200),
-        array(7, "Proyector", 2000)
-    ];
+use PDO;
+use Core\Model;
 
-    //Constructor
-    function __construct(){
-        //Constructor vacío
-    }
-
-    //Devuelve todos los procuctos, devuelve el array
+require_once '../core/Model.php';
+/**
+*
+*/
+class Product extends Model{
+ 
+      
     public static function all(){
-        //Para acceder a una constante ::
-        return Product::PRODUCTS;
+        $db = Product::db();
+        $statement = $db->query('SELECT * FROM products');
+        $products = $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
+
+        return $products;
     }
 
-    //Devolver un producto en particular
     public static function find($id){
-        return Product::PRODUCTS[$id-1];
+        $db = Product::db();
+        $stmt = $db->prepare('SELECT * FROM products WHERE id=:id');
+        $stmt->execute(array(':id' => $id));
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Product::class);
+        $product = $stmt->fetch(PDO::FETCH_CLASS);
+
+        return $product;
     }
 
     public function insert(){
-        
+        $db = Product::db();
+        $stmt = $db->prepare('INSERT INTO products(name, price, fecha_compra) VALUES(:name, :price, :fecha_compra)');
+        $stmt->bindValue(':name', $this->name);
+        $stmt->bindValue(':price', $this->price);
+        $stmt->bindValue(':fecha_compra', $this->fecha_compra);
+
+        return $stmt->execute();
     }
 
-}//Fin clase
+    public function delete(){
+        $db = Product::db();
+        $stmt = $db->prepare('DELETE FROM products WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+
+        return $stmt->execute();
+    }
+
+    public function save(){
+        $db = Product::db();
+        $stmt = $db->prepare('UPDATE products SET name = :name, price = :price, fecha_compra = :fecha_compra WHERE id = :id');
+        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':name', $this->name);
+        $stmt->bindValue(':price', $this->price);
+        $stmt->bindValue(':fecha_compra', $this->fecha_compra);
+
+        return $stmt->execute();
+    }
+}
