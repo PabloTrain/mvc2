@@ -5,7 +5,7 @@
   <tr>
     <th>Nombre</th>
     <th>Precio</th>
-    <th>Fecha de compra</th>
+    <th>Tipo</th>
     <th></th>
   </tr>
 
@@ -13,7 +13,7 @@
     <tr>
     <td><?php echo $product->name ?></td>
     <td><?php echo $product->price ?></td>
-    <td><?php echo $product->fecha_compra ?></td>
+    <td><?php echo $product->type->name ?></td>
     <td>
       <a href="/product/show/<?php echo $product->id ?>" class="btn btn-primary">Ver </a>
     </td>

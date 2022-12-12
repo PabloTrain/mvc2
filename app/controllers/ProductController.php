@@ -3,6 +3,7 @@ namespace App\Controllers;
 
     //require "../Product.php";
 use App\Models\Product;
+use App\Models\ProductType;
 use Dompdf\Dompdf;
 
 class ProductController{
@@ -28,17 +29,8 @@ class ProductController{
         require('../app/views/product/show.php');        
         }
 
-   function pdf(){
-    
-    $dompdf = new Dompdf();
-    $dompdf->loadHtml('<h1>Hola mundo</h1><br>');
-    $dompdf->render();
-    header("Content-type: application/pdf");
-    header("Content-Disposition: inline; filename=documento.pdf");
-    echo $dompdf->output();
-   } 
-
-   public function create(){
+    public function create(){
+        $product_types = ProductType::all();
         require '../app/views/product/create.php';
     }
 
@@ -74,6 +66,4 @@ class ProductController{
         $product->delete();
         header('Location:/product');
     }
-
-
 }//Fin clase
