@@ -20,5 +20,6 @@
     <input type="text" name="price" class="form-control"
     value="<?php echo $product->price ?>">
 </div>
+
 <button type="submit" class="btn btn-default">Enviar</button>
 </form>
